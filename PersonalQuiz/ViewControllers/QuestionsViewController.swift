@@ -144,7 +144,7 @@ private extension QuestionsViewController {
         performSegue(withIdentifier: "showResult", sender: nil)
     }
     
-    func getAnimals (of: Animal) -> [Animal] {
+    func filterAnimals (by: Animal) -> [Animal] {
         let filterAnswersChosen = answersChosen.map{
             $0.animal
         }
@@ -152,16 +152,16 @@ private extension QuestionsViewController {
     }
     
     func findWinningAnimal() -> Animal! {
-        let dogs = getAnimals(of: .dog)
-        let cats = getAnimals(of: .cat)
-        let turtle = getAnimals(of: .turtle)
-        let rabbit = getAnimals(of: .rabbit)
+        let dogs = filterAnimals(by: .dog)
+        let cats = filterAnimals(by: .cat)
+        let turtles = filterAnimals(by: .turtle)
+        let rabbits = filterAnimals(by: .rabbit)
         
-        let animals = [dogs, cats, turtle, rabbit]
-        let sortedAnimal = animals.sorted{$0.count < $1.count}
-        let winnerAnimal = sortedAnimal.first
+        let animals = [dogs, cats, turtles, rabbits]
+        let sortedAnimals = animals.sorted{$0.count < $1.count}
+        let winnerAnimals = sortedAnimals.first
         
-        return winnerAnimal!.first.self
+        return winnerAnimals!.first.self
     }
 }
 
