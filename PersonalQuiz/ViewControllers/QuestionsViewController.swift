@@ -144,6 +144,8 @@ private extension QuestionsViewController {
         performSegue(withIdentifier: "showResult", sender: nil)
     }
     
+    // MARK: - Methods of finding the winning animal
+    
     func filterAnimals (by: Animal) -> [Animal] {
         let filterAnswersChosen = answersChosen.map{
             $0.animal
