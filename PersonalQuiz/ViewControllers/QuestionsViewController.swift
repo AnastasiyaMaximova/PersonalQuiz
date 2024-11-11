@@ -30,7 +30,7 @@ final class QuestionsViewController: UIViewController {
     private var currentAnswers: [Answer] {
         questions[questionIndex].answers
     }
-
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,8 @@ final class QuestionsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let resultVC = segue.destination as? ResultViewController
+        resultVC?.winnerAnimal = findWinningAnimal()
     }
     
     // MARK: - IB Actions
@@ -142,6 +143,28 @@ private extension QuestionsViewController {
         
         performSegue(withIdentifier: "showResult", sender: nil)
     }
+    
+    func getAnimals (of: Animal) -> [Animal] {
+        let filterAnswersChosen = answersChosen.map{
+            $0.animal
+        }
+        return filterAnswersChosen
+    }
+    
+    func findWinningAnimal() -> Animal! {
+        let dogs = getAnimals(of: .dog)
+        let cats = getAnimals(of: .cat)
+        let turtle = getAnimals(of: .turtle)
+        let rabbit = getAnimals(of: .rabbit)
+        
+        let animals = [dogs, cats, turtle, rabbit]
+        let sortedAnimal = animals.sorted{$0.count < $1.count}
+        let winnerAnimal = sortedAnimal.first
+        
+        return winnerAnimal!.first.self
+    }
 }
+
+
 
 

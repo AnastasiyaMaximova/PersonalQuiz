@@ -10,14 +10,15 @@ import UIKit
 final class ResultViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
-    
     @IBOutlet weak var definitionLabel: UILabel!
     
-    var questions: Question!
+    var winnerAnimal: Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        resultLabel.text = "Вы - \(winnerAnimal.rawValue)"
+        definitionLabel.text = "\(winnerAnimal.definition)"
 
     }
     
@@ -30,4 +31,4 @@ final class ResultViewController: UIViewController {
     }
 }
 
-//private func findNumberOf (animals:)
+

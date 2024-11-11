@@ -302,16 +302,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PQD-JN-cre">
-                                <rect key="frame" x="80" y="236" width="160.5" height="96.5"/>
+                                <rect key="frame" x="20" y="236" width="280" height="96.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы - 🐙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTx-V8-Caq">
-                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="60"/>
+                                        <rect key="frame" x="60" y="0.0" width="160.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы осьминог" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP0-OJ-34i">
-                                        <rect key="frame" x="28" y="76" width="104" height="20.5"/>
+                                        <rect key="frame" x="88" y="76" width="104" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -324,6 +324,8 @@
                         <constraints>
                             <constraint firstItem="PQD-JN-cre" firstAttribute="centerX" secondItem="fN4-B1-rfr" secondAttribute="centerX" id="MiA-ge-Rgc"/>
                             <constraint firstItem="PQD-JN-cre" firstAttribute="centerY" secondItem="fN4-B1-rfr" secondAttribute="centerY" id="UQ6-s3-aFP"/>
+                            <constraint firstItem="PQD-JN-cre" firstAttribute="leading" secondItem="ejH-dv-X4O" secondAttribute="leading" constant="20" id="bPp-cS-e7n"/>
+                            <constraint firstItem="ejH-dv-X4O" firstAttribute="trailing" secondItem="PQD-JN-cre" secondAttribute="trailing" constant="20" id="k8t-s2-8z0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="icl-s8-iGo">
